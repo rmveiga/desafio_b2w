@@ -45,7 +45,7 @@ OTHER_APPS = [
 ]
 
 MY_APPS = [
-
+    'planeta'
 ]
 
 INSTALLED_APPS = DJANGO_APPS + OTHER_APPS + MY_APPS
