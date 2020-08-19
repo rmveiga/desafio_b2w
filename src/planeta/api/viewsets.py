@@ -32,6 +32,10 @@ class PlanetaViewset(viewsets.ModelViewSet):
     @method_decorator(vary_on_cookie)
     def list(self, request, *args, **kwargs):
         planetas = Planeta.objects.all()
+        filtro = request.query_params.get('nome', None)
+        if filtro:
+            planetas = planetas.filter(nome=filtro)
+
         serializer = PlanetaSerializer(planetas, many=True)
         for i in range(serializer.data.__len__()):
             nome_planeta = serializer.data[i].get('nome')
