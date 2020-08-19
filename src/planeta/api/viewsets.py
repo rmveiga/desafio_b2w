@@ -32,3 +32,12 @@ class PlanetaViewset(viewsets.ModelViewSet):
             filmes = self.get_filmes_planeta(nome_planeta)
             serializer.data[i].update({'filmes': filmes})
         return Response(serializer.data)
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        nome_planeta = serializer.data.get('nome')
+        filmes = self.get_filmes_planeta(nome_planeta)
+        serializer_data = serializer.data
+        serializer_data.update({'filmes': filmes})
+        return Response(serializer_data)
