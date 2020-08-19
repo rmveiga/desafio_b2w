@@ -1,4 +1,8 @@
 import requests
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
+from django.views.decorators.vary import vary_on_cookie
+
 from rest_framework import viewsets
 from rest_framework.response import Response
 
@@ -24,6 +28,8 @@ class PlanetaViewset(viewsets.ModelViewSet):
             return get_nome_filmes(planeta[0].get('films'))
         return ['Relação de filmes indisponível',]
 
+    @method_decorator(cache_page(60 * 60 * 2))
+    @method_decorator(vary_on_cookie)
     def list(self, request, *args, **kwargs):
         planetas = Planeta.objects.all()
         serializer = PlanetaSerializer(planetas, many=True)
@@ -33,6 +39,7 @@ class PlanetaViewset(viewsets.ModelViewSet):
             serializer.data[i].update({'filmes': filmes})
         return Response(serializer.data)
 
+    @method_decorator(cache_page(60 * 60 * 2))
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance)
