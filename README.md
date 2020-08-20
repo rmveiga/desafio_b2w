@@ -1,6 +1,6 @@
 # Desafio B2W
 
-
+[Introdução](#introdução)
 
 
 
@@ -38,3 +38,14 @@ Para que o carregamento da listagem de filmes ocorra, é necessário realizar ao
 
 Para excluir um planeta, basta realizar uma requisição utilizando o método HTTP DELETE para http://localhost:8000/api/planetas/1/ onde o número 1 representa o ID do planeta que se deseja excluir.
 
+## Testes
+
+Os testes da API foram elaborados para verificar a capacidade do sistema em realizar algumas operações, como:
+
+- Obter a relação de filmes do planeta cadastrado
+- Apresentar um aviso caso não seja possível obter a relação de filmes do planeta cadastrado
+- Apresentar a relação de planetas cadastrados
+- Apresentar o planeta cadastrado com base em busca por ID 
+- Apresentar o planeta cadastrado com base em busca por NOME
+
+Todos os testes utilizam mock para simular a consulta a API [swapi](https://swapi.dev/api/).
