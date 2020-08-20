@@ -14,7 +14,7 @@ O desafio consiste na criação de uma API que contenha os dados dos planetas do
 
 ## Sistema de desenvolvimento
 
-Para a resolução do desafio, utilizei a linguagem de programação Python, em conjunto com os frameworks Django e Django Rest Framework
+Para a resolução do desafio, utilizei a linguagem de programação Python, em conjunto com os frameworks [Django](https://www.djangoproject.com/) e [Django Rest Framework](https://www.django-rest-framework.org/)
 
 ## Funcionamento
 
