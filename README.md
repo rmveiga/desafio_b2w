@@ -1,8 +1,12 @@
 # Desafio B2W
 
-[Introdução](#introdução)
-
-
+- [Introdução](#introdução)<br>
+- [Sistema de desenvolvimento](#sistema-de-desenvolvimento)
+- [Funcionamento](#funcionamento)
+  - [Consultas](#consultas)
+  - [Cache](#cache)
+  - [Exclusão](#exclusão)
+- [Testes](#testes)
 
 ## Introdução
 
